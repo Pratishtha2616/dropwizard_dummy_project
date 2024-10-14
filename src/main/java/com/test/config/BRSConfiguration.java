@@ -6,7 +6,7 @@ import io.dropwizard.db.DataSourceFactory;
 
 import java.util.Objects;
 
-
+//configuration
 public class BRSConfiguration extends Configuration {
     private DataSourceFactory database = new DataSourceFactory();
 
