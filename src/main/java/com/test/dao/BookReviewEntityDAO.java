@@ -5,6 +5,7 @@ import com.test.entity.BookReviewEntity;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
 
+import java.util.List;
 import java.util.UUID;
 
 public class BookReviewEntityDAO extends AbstractDAO<BookReviewEntity> {
@@ -16,8 +17,9 @@ public class BookReviewEntityDAO extends AbstractDAO<BookReviewEntity> {
     // You can add methods to interact with the BookReviewEntity here
 
     public BookReviewEntity findById(String id) {
-        return get(id); 
+        return get(id);
     }
+
 
     public BookReviewEntity save(BookReviewEntity bookReviewEntity) {
         if(StringUtils.isNullOrEmpty(bookReviewEntity.getId()))

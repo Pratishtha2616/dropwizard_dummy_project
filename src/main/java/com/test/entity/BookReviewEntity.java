@@ -1,5 +1,6 @@
 package com.test.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 //import javax.persistence.Column;
@@ -17,6 +18,7 @@ public class BookReviewEntity {
     @Id
     private String id;
 
+     @JsonProperty("book_id")
     @Column(name="book_id",nullable = false)
     private String book_id;
 
