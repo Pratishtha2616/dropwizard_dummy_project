@@ -1,6 +1,6 @@
+
 database:
   # the name of your JDBC driver
-
 
   # the username
   user: root
@@ -28,3 +28,6 @@ database:
 
   # whether or not idle connections should be validated
   checkConnectionWhileIdle: false
+
+
+  driverClass: com.mysql.cj.jdbc.Driver

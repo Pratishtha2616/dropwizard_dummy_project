@@ -12,6 +12,7 @@ public class BRSConfiguration extends Configuration {
 
     @JsonProperty("database")
     public DataSourceFactory getDataSourceFactory() {
+        //get the things in a singleton pattern
         if(Objects.isNull(database)) {
             database = new DataSourceFactory();
         }
@@ -19,7 +20,7 @@ public class BRSConfiguration extends Configuration {
 
     }
 
-    @JsonProperty("database")
+   @JsonProperty("database")
     public void setDataSourceFactory(DataSourceFactory dataSourceFactory) {
         this.database = dataSourceFactory;
     }

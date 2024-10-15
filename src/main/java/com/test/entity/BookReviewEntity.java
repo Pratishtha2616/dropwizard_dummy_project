@@ -1,9 +1,6 @@
 package com.test.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 //import javax.persistence.Column;
 //import javax.persistence.GeneratedValue;
@@ -17,11 +14,11 @@ import jakarta.persistence.Table;
 public class BookReviewEntity {
 
     //@Id
-    @EmbeddedId
+    @Id
     private String id;
 
-    @Column(name="bookId")
-    private String bookId;
+    @Column(name="book_id",nullable = false)
+    private String book_id;
 
     @Column(name="rating")
     private Integer rating;
@@ -38,11 +35,11 @@ public class BookReviewEntity {
     }
 
     public String getBookId() {
-        return bookId;
+        return book_id;
     }
 
     public void setBookId(String bookId) {
-        this.bookId = bookId;
+        this.book_id= bookId;
     }
 
     public Integer getRating() {

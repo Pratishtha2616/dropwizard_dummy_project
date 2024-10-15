@@ -1,5 +1,6 @@
 package com.test.dao;
 
+import com.mysql.cj.util.StringUtils;
 import com.test.entity.BookReviewEntity;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
@@ -14,13 +15,18 @@ public class BookReviewEntityDAO extends AbstractDAO<BookReviewEntity> {
 
     // You can add methods to interact with the BookReviewEntity here
 
-    public BookReviewEntity findById(int id) {
-        return get(id);
+    public BookReviewEntity findById(String id) {
+        return get(id); 
     }
 
     public BookReviewEntity save(BookReviewEntity bookReviewEntity) {
+        if(StringUtils.isNullOrEmpty(bookReviewEntity.getId()))
         bookReviewEntity.setId(UUID.randomUUID().toString());
         return persist(bookReviewEntity);//functions already available in AbstractDAO
     }
 }
+
+
+
+
 
